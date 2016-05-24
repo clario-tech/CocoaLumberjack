@@ -401,6 +401,13 @@ extern unsigned long long const kDDDefaultLogFilesDiskQuota;
  **/
 - (DDLogFileInfo *)currentLogFileInfo;
 
+#pragma mark - REWRITE: Original logic
+/**
+ * Added this private method to public interface in
+ * order to override logMessage: method in child class
+ */
+- (NSFileHandle *)currentLogFileHandle;
+
 @end
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
