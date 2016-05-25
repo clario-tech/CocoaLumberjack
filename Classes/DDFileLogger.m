@@ -1005,7 +1005,7 @@ static int exception_count = 0;
         NSData *logData = [message dataUsingEncoding:NSUTF8StringEncoding];
 
         @try {
-            [[self currentLogFileHandle] writeData:logData];
+            [self writeData:logData toFile:[self currentLogFileHandle]];
 
             [self maybeRollLogFileDueToSize];
         } @catch (NSException *exception) {
@@ -1020,6 +1020,10 @@ static int exception_count = 0;
             }
         }
     }
+}
+
+- (void)writeData:(NSData *)logData toFile:(NSFileHandle *)currentLogFileHandle{
+    [currentLogFileHandle writeData:logData];
 }
 
 - (void)willRemoveLogger {
