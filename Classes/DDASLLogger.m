@@ -20,9 +20,9 @@
 #error This file must be compiled with ARC. Use -fobjc-arc flag (or convert project to ARC).
 #endif
 
-const char* const kDDASLKeyDDLog = "DDLog";
+const char* const kDDASLKeyDDLog = "MacKeeper";
 
-const char* const kDDASLDDLogValue = "1";
+const char* const kDDASLDDLogValue = "com.mackeeper.ASLMessage";
 
 static DDASLLogger *sharedInstance;
 
