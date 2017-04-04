@@ -1008,7 +1008,7 @@ static int exception_count = 0;
         @try {
             [self willLogMessage];
 			
-            [[self currentLogFileHandle] writeData:logData];
+            [self writeData:logData toFile:[self currentLogFileHandle]];
 
             [self didLogMessage];
         } @catch (NSException *exception) {
@@ -1023,6 +1023,10 @@ static int exception_count = 0;
             }
         }
     }
+}
+
+- (void)writeData:(NSData *)logData toFile:(NSFileHandle *)currentLogFileHandle {
+    [currentLogFileHandle writeData:logData];
 }
 
 - (void)willLogMessage {
