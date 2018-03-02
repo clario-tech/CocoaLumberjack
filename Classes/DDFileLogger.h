@@ -419,6 +419,13 @@ extern unsigned long long const kDDDefaultLogFilesDiskQuota;
  **/
 @property (nonatomic, readonly, strong) DDLogFileInfo *currentLogFileInfo;
 
+#pragma mark - REWRITE: Original logic
+/**
+ * Added this method in order to have the ability to manipulate
+ * data in child classes or log file synchronization.
+ */
+- (void)writeData:(NSData *)logData toFile:(NSFileHandle *)currentLogFileHandle;
+
 @end
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
