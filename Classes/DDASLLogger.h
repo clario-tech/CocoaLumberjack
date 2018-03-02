@@ -28,9 +28,6 @@ extern const char* const kDDASLKeyDDLog;
 // Value set for kDDASLKeyDDLog
 extern const char* const kDDASLDDLogValue;
 
-// Custom key set on messages sent to ASL which specify unique product identifier
-extern const char* const kDDASLUPIKey;
-
 /**
  * This class provides a logger for the Apple System Log facility.
  *
@@ -45,14 +42,6 @@ extern const char* const kDDASLUPIKey;
  * you may choose to use a file logger and a tty logger.
  **/
 @interface DDASLLogger : DDAbstractLogger <DDLogger>
-
-/**
- *  Setting this property will cause logger to add
- *  custom Key/Value on messages sent to ASL.
- *  This user defined attribute can be used as a
- *  flag for retrieving information from ASL.
- */
-@property (copy, nonatomic) NSString *uniqueProductIdentifier;
 
 /**
  *  Singleton method
