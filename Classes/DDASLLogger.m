@@ -24,8 +24,6 @@ const char* const kDDASLKeyDDLog = "DDLog";
 
 const char* const kDDASLDDLogValue = "1";
 
-const char* const kDDASLUPIKey = "DDUniqueProductIdentifier";
-
 static DDASLLogger *sharedInstance;
 
 @interface DDASLLogger () {
@@ -104,12 +102,7 @@ static DDASLLogger *sharedInstance;
 
         aslmsg m = asl_new(ASL_TYPE_MSG);
         if (m != NULL) {
-            int upi_set_result = 0;
-            if (self.uniqueProductIdentifier != nil){
-                upi_set_result = asl_set(m, kDDASLUPIKey, [self.uniqueProductIdentifier UTF8String]);
-            }
-            if ((upi_set_result == 0) &&
-                asl_set(m, ASL_KEY_LEVEL, level_strings[aslLogLevel]) == 0 &&
+            if (asl_set(m, ASL_KEY_LEVEL, level_strings[aslLogLevel]) == 0 &&
                 asl_set(m, ASL_KEY_MSG, msg) == 0 &&
                 asl_set(m, ASL_KEY_READ_UID, readUIDString) == 0 &&
                 asl_set(m, kDDASLKeyDDLog, kDDASLDDLogValue) == 0) {
