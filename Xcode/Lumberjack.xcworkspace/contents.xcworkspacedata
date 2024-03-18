@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../Classes">
-   </FileRef>
-   <FileRef
       location = "group:../Documentation">
    </FileRef>
    <Group
@@ -15,12 +12,6 @@
       </FileRef>
       <FileRef
          location = "group:CocoaLumberjack.podspec">
-      </FileRef>
-      <FileRef
-         location = "group:Dangerfile">
-      </FileRef>
-      <FileRef
-         location = "group:Gemfile">
       </FileRef>
       <FileRef
          location = "group:LICENSE">

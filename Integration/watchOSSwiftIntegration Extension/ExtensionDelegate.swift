@@ -1,6 +1,6 @@
 // Software License Agreement (BSD License)
 //
-// Copyright (c) 2010-2020, Deusty, LLC
+// Copyright (c) 2010-2024, Deusty, LLC
 // All rights reserved.
 //
 // Redistribution and use of this software in source and binary forms,
@@ -14,6 +14,7 @@
 //   prior written permission of Deusty, LLC.
 
 import WatchKit
+import CocoaLumberjackSwift
 
 final class ExtensionDelegate: NSObject, WKExtensionDelegate {
 

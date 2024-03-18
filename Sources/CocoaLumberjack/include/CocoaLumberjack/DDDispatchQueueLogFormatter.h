@@ -1,6 +1,6 @@
 // Software License Agreement (BSD License)
 //
-// Copyright (c) 2010-2020, Deusty, LLC
+// Copyright (c) 2010-2024, Deusty, LLC
 // All rights reserved.
 //
 // Redistribution and use of this software in source and binary forms,
@@ -63,14 +63,14 @@ typedef NS_ENUM(NSUInteger, DDDispatchQueueLogFormatterMode){
  *
  * Note: QOS will be absent in the log messages if running on OS versions that don't support it.
  **/
-typedef NSString * DDQualityOfServiceName NS_EXTENSIBLE_STRING_ENUM;
+typedef NSString * DDQualityOfServiceName NS_STRING_ENUM;
 
-FOUNDATION_EXPORT DDQualityOfServiceName const DDQualityOfServiceUserInteractive API_AVAILABLE(macos(10.10), ios(8.0));
-FOUNDATION_EXPORT DDQualityOfServiceName const DDQualityOfServiceUserInitiated API_AVAILABLE(macos(10.10), ios(8.0));
-FOUNDATION_EXPORT DDQualityOfServiceName const DDQualityOfServiceDefault API_AVAILABLE(macos(10.10), ios(8.0));
-FOUNDATION_EXPORT DDQualityOfServiceName const DDQualityOfServiceUtility API_AVAILABLE(macos(10.10), ios(8.0));
-FOUNDATION_EXPORT DDQualityOfServiceName const DDQualityOfServiceBackground API_AVAILABLE(macos(10.10), ios(8.0));
-FOUNDATION_EXPORT DDQualityOfServiceName const DDQualityOfServiceUnspecified API_AVAILABLE(macos(10.10), ios(8.0));
+FOUNDATION_EXPORT DDQualityOfServiceName const DDQualityOfServiceUserInteractive NS_SWIFT_NAME(DDQualityOfServiceName.userInteractive) API_AVAILABLE(macos(10.10), ios(8.0));
+FOUNDATION_EXPORT DDQualityOfServiceName const DDQualityOfServiceUserInitiated NS_SWIFT_NAME(DDQualityOfServiceName.userInitiated) API_AVAILABLE(macos(10.10), ios(8.0));
+FOUNDATION_EXPORT DDQualityOfServiceName const DDQualityOfServiceDefault NS_SWIFT_NAME(DDQualityOfServiceName.default) API_AVAILABLE(macos(10.10), ios(8.0));
+FOUNDATION_EXPORT DDQualityOfServiceName const DDQualityOfServiceUtility NS_SWIFT_NAME(DDQualityOfServiceName.utility) API_AVAILABLE(macos(10.10), ios(8.0));
+FOUNDATION_EXPORT DDQualityOfServiceName const DDQualityOfServiceBackground NS_SWIFT_NAME(DDQualityOfServiceName.background) API_AVAILABLE(macos(10.10), ios(8.0));
+FOUNDATION_EXPORT DDQualityOfServiceName const DDQualityOfServiceUnspecified NS_SWIFT_NAME(DDQualityOfServiceName.unspecified) API_AVAILABLE(macos(10.10), ios(8.0));
 
 /**
  * This class provides a log formatter that prints the dispatch_queue label instead of the mach_thread_id.
@@ -201,11 +201,6 @@ FOUNDATION_EXPORT DDQualityOfServiceName const DDQualityOfServiceUnspecified API
  *  Method to compute the queue thread label
  */
 - (NSString *)queueThreadLabelForLogMessage:(DDLogMessage *)logMessage;
-
-/**
- *  The actual method that formats a message (transforms a `DDLogMessage` model into a printable string)
- */
-- (NSString *)formatLogMessage:(DDLogMessage *)logMessage;
 
 @end
 
